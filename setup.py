@@ -5,7 +5,7 @@ import pygame
 sys.argv.append('py2exe')
 
 # constant defs
-VERSION = '1.0'
+VERSION = '1.02'
 AUTHOR_NAME = 'Gregory Adam Scott'
 AUTHOR_EMAIL = 'armouredcommander@gmail.com'
 AUTHOR_URL = 'http://www.armouredcommander.com'
@@ -22,11 +22,12 @@ DLLS = ['libtcod-mingw.dll', 'python27.dll', 'SDL.dll']
 
 if os.path.exists('dist/'): shutil.rmtree('dist/')	# remove last dist dir
 
-extra_files = [ ("",[ICONFILE,'README.txt', 'gpl.txt',
-	'terminal8x12_armcom.png', 'terminal8x12_armcom_small.png', 'data.zip']),
+extra_files = [ ("",[ICONFILE,'readme.md', 'gpl.txt',
+	'terminal8x12_armcom.png', 'terminal8x12_armcom_small.png']),
 	("data",glob.glob(os.path.join('data','*.png'))),
 	("data",glob.glob(os.path.join('data','*.xml'))),
-	("data",glob.glob(os.path.join('data','*.xp')))
+	("data",glob.glob(os.path.join('data','*.xp'))),
+	("data",glob.glob(os.path.join('data','*.zip')))
 ]
 
 # list of modules to exclude from dist
@@ -84,7 +85,7 @@ for f in DLLS:
 # copy over source files
 os.mkdir('dist/src')
 SOURCEFILES = ['armcom.py', 'armcom_defs.py', 'armcom_vehicle_defs.py', 'setup.py',
-	'xp_loader.py', 'XpLoader_LICENSE.txt', 'gpl.txt', 'icon.ico']
+	'xp_loader.py', 'LICENSE_xp_loader.txt', 'gpl.txt', 'icon.ico']
 for filename in SOURCEFILES:
 	shutil.copyfile(filename, 'dist/src/'+filename)
 
