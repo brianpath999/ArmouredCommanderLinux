@@ -1,3 +1,11 @@
+Linux Fork of Armoured Commander
+
+Linux Fork by Brian Weisberg
+brianweis999@gmail.com
+
+You must run python2 -m pip install tcod==6.0.7
+
+
 # Armoured Commander - The WWII Tank Commander Roguelike
 
 #TODO (Short description of game)
